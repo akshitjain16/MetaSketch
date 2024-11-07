@@ -21,7 +21,6 @@ describe("Authentication", () => {
     expext(updatedResponse.statusCode).toBe(400);
   });
 
-
   test("SIGN-UP SHOULD FAIL IF USERNAME IS NOT PROVIDED", async () => {
     const username = "nio" + Math.random();
     const password = "12345";
@@ -32,7 +31,6 @@ describe("Authentication", () => {
     });
     expect(response.statusCode).toBe(400);
   });
-
 
   test("USER IS ABLE TO SIGN-IN WITH CORRECT CREDENTIALS", async () => {
     const username = `neo-${Math.random()}`;
@@ -54,10 +52,9 @@ describe("Authentication", () => {
     expect(response.data).toHaveProperty("token"); // Check if token is provided
   });
 
-
   test("SIGN-IN SHOULD FAIL WITH INCORRECT CREDENTIALS", async () => {
     const username = `neo-${Math.random()}`;
-    const password = "12345";  
+    const password = "12345";
 
     await axios.post(`${BACKEND_URL}/api/v1/signup`, {
       username,
@@ -67,7 +64,7 @@ describe("Authentication", () => {
 
     try {
       await axios.post(`${BACKEND_URL}/api/v1/signin`, {
-        username:"wrong",
+        username: "wrong",
         password,
       });
     } catch (error) {
@@ -77,10 +74,19 @@ describe("Authentication", () => {
   });
 });
 
+describe("User endpoints", () => {
+  beforeAll(async () => {
+    const username = `neo-${Math.random()}`;
+    const password = "123456";
 
-describe("User endpoints", ()=>{
-  beforeAll(()=>{
+    await axios.post(`${BACKEND_URL}/api/v1/signup`, {
+      username,
+      password,
+      type: "admin",
+    });
+  });
 
-  })
-})
- 
+  test("test1", () => {
+    expect(true).toBe(true);
+  });
+});
