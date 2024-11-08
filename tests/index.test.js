@@ -1,5 +1,6 @@
 const axios = require("axios");
 const BACKEND_URL = "http://localhost:3000";
+const WS_URL = "ws://localhost:3001";
 
 describe("Authentication", () => {
   test("USER IS ABLE TO SIGN-UP FOR ONCE", async () => {
@@ -939,7 +940,7 @@ describe("Websocket tests", () => {
       ws1 = new WebSocket(WS_URL)
 
       ws1.onmessage = (event) => {
-          console.log("got back adata 1")
+          console.log("got back data 1")
           console.log(event.data)
           
           ws1Messages.push(JSON.parse(event.data))
