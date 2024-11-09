@@ -1,6 +1,6 @@
 <p align="center">
   <a href="" rel="noopener">
-    <img width=1280px height=645px src="https://media.licdn.com/dms/image/v2/C4D12AQEAHwh_pta8DQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1645616741443?e=2147483647&v=beta&t=6dz5JYIxacszKLO0fYEZovKXedeTBk7EgLXG7a4RGHI" alt="Metaverse Community Logo">
+    <img width=960px height=645px src="https://media.licdn.com/dms/image/v2/C4D12AQEAHwh_pta8DQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1645616741443?e=2147483647&v=beta&t=6dz5JYIxacszKLO0fYEZovKXedeTBk7EgLXG7a4RGHI" alt="Metaverse Community Logo">
   </a>
 </p>
 
