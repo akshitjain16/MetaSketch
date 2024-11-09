@@ -9,8 +9,8 @@
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/yourusername/Metaverse-Community.svg)](https://github.com/yourusername/Metaverse-Community/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/yourusername/Metaverse-Community.svg)](https://github.com/yourusername/Metaverse-Community/pulls)
+[![GitHub Issues](https://img.shields.io/github/issues/akshitjain16/Metaverse-Community.svg)](https://github.com/yourusername/Metaverse-Community/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/akshitjain16/Metaverse-Community.svg)](https://github.com/yourusername/Metaverse-Community/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
