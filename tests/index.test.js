@@ -967,7 +967,7 @@ describe("Websocket tests", () => {
   })
 
   test("Get back ack for joining the space", async () => {
-      console.log("insixce first test")
+      console.log("inside first test")
       ws1.send(JSON.stringify({
           "type": "join",
           "payload": {
@@ -977,7 +977,7 @@ describe("Websocket tests", () => {
       }))
       console.log("insixce first test1")
       const message1 = await waitForAndPopLatestMessage(ws1Messages);
-      console.log("insixce first test2")
+      console.log("inside first test2")
       ws2.send(JSON.stringify({
           "type": "join",
           "payload": {
