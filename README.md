@@ -4,7 +4,7 @@
   </a>
 </p>
 
-<h3 align="center">Metaverse Community</h3>
+<h3 align="center">Metaverse Workspace</h3>
 
 <div align="center">
 
@@ -17,7 +17,7 @@
 
 ---
 
-<p align="center">The Metaverse Community is a platform designed to bring people together in virtual, immersive environments. This project enables users to connect, interact, and explore various experiences in the metaverse through a seamless and dynamic interface.
+<p align="center">The Metaverse Workspace is a platform designed to bring people together in virtual, immersive environments. This project enables users to connect, interact, and explore various experiences in the metaverse through a seamless and dynamic interface.
     <br> 
 </p>
 
@@ -35,11 +35,11 @@
 
 ## 🧐 About <a name = "about"></a>
 
-The Metaverse Community aims to create a seamless digital environment where users can socialize, collaborate, and experience virtual worlds. Built with a robust backend and intuitive frontend, this project is designed to support dynamic interactions, real-time communications, and multimedia sharing within the metaverse.
+The Workspace aims to create a seamless digital environment where users can socialize, collaborate, and experience virtual worlds. Built with a robust backend and intuitive frontend, this project is designed to support dynamic interactions, real-time communications, and multimedia sharing within the metaverse.
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-Follow these instructions to get the Metaverse Community project up and running on your local machine for development and testing purposes.
+Follow these instructions to get the project up and running on your local machine for development and testing purposes.
 
 ### Prerequisites
 
@@ -57,7 +57,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/akshitjain16/Metaverse-Community.git
-cd Metaverse-Community
+cd community
 ```
 
 Install dependencies:
