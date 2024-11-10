@@ -1,5 +1,4 @@
 const axios2 = require("axios");
-
 const BACKEND_URL = "http://localhost:3000"
 const WS_URL = "ws://localhost:3001"
 
@@ -38,7 +37,6 @@ const axios = {
     },
 }
 
-
 describe("Authentication", () => {
   test("USER IS ABLE TO SIGN-UP FOR ONCE", async () => {
     const username = "nio" + Math.random();
@@ -48,7 +46,7 @@ describe("Authentication", () => {
       password,
       type: "admin",
     });
-    expext(response.status).toBe(200);
+    expect(response.status).toBe(200);
 
     const updatedResponse = await axios.post(`${BACKEND_URL}/api/v1/signup`, {
       username,
@@ -56,7 +54,7 @@ describe("Authentication", () => {
       type: "admin",
     });
 
-    expext(updatedResponse.status).toBe(400);
+    expect(updatedResponse.status).toBe(400);
   });
 
   test("SIGN-UP SHOULD FAIL IF USERNAME IS NOT PROVIDED", async () => {
