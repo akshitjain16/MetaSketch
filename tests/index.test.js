@@ -139,7 +139,7 @@ describe("User metadata endpoint", () => {
               authorization: `Bearer ${token}`
           }
       })
-      console.log("avatar response is : " + avatarResponse.data.avatarId)
+      //console.log("avatar response is : " + avatarResponse.data.avatarId)
 
       avatarId = avatarResponse.data.avatarId;
 
@@ -893,8 +893,8 @@ describe("Websocket tests", () => {
 
       adminUserId = adminSignupResponse.data.userId;
       adminToken = adminSigninResponse.data.token;
-      console.log("adminSignupResponse.status")
-      console.log(adminSignupResponse.status)
+      //console.log("adminSignupResponse.status")
+      //console.log(adminSignupResponse.status)
       
       const userSignupResponse = await axios.post(`${BACKEND_URL}/api/v1/signup`, {
           username: username + `-user`,
@@ -907,7 +907,7 @@ describe("Websocket tests", () => {
       })
       userId = userSignupResponse.data.userId
       userToken = userSigninResponse.data.token
-      console.log("useroktne", userToken)
+      //console.log("useroktne", userToken)
       const element1Response = await axios.post(`${BACKEND_URL}/api/v1/admin/element`, {
           "imageUrl": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRCRca3wAR4zjPPTzeIY9rSwbbqB6bB2hVkoTXN4eerXOIkJTG1GpZ9ZqSGYafQPToWy_JTcmV5RHXsAsWQC3tKnMlH_CsibsSZ5oJtbakq&usqp=CAE",
           "width": 1,
@@ -965,7 +965,7 @@ describe("Websocket tests", () => {
           "authorization": `Bearer ${userToken}`
       }})
 
-      console.log(spaceResponse.status)
+      //console.log(spaceResponse.status)
       spaceId = spaceResponse.data.spaceId
   }
    
@@ -973,8 +973,8 @@ describe("Websocket tests", () => {
       ws1 = new WebSocket(WS_URL)
 
       ws1.onmessage = (event) => {
-          console.log("got back data 1")
-          console.log(event.data)
+          //console.log("got back data 1")
+          //console.log(event.data)
           
           ws1Messages.push(JSON.parse(event.data))
       }
@@ -985,8 +985,8 @@ describe("Websocket tests", () => {
       ws2 = new WebSocket(WS_URL)
 
       ws2.onmessage = (event) => {
-          console.log("got back data 2")
-          console.log(event.data)
+          //console.log("got back data 2")
+          //console.log(event.data)
           ws2Messages.push(JSON.parse(event.data))
       }
       await new Promise(r => {
@@ -1000,7 +1000,7 @@ describe("Websocket tests", () => {
   })
 
   test("Get back ack for joining the space", async () => {
-      console.log("inside first test")
+      //console.log("inside first test")
       ws1.send(JSON.stringify({
           "type": "join",
           "payload": {
@@ -1008,9 +1008,9 @@ describe("Websocket tests", () => {
               "token": adminToken
           }
       }))
-      console.log("insixce first test1")
+      //console.log("insixce first test1")
       const message1 = await waitForAndPopLatestMessage(ws1Messages);
-      console.log("inside first test2")
+      //console.log("inside first test2")
       ws2.send(JSON.stringify({
           "type": "join",
           "payload": {
@@ -1018,7 +1018,7 @@ describe("Websocket tests", () => {
               "token": userToken
           }
       }))
-      console.log("insixce first test3")
+      //console.log("insixce first test3")
 
       const message2 = await waitForAndPopLatestMessage(ws2Messages);
       const message3 = await waitForAndPopLatestMessage(ws1Messages);
