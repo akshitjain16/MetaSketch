@@ -1,6 +1,6 @@
 services:
   # postgres:
-  #   image: postgres:13
+  #  image: akshitjain16/postgres:latest
   #   container_name: metasketch_postgres
   #   environment:
   #     POSTGRES_USER: postgres
@@ -12,9 +12,10 @@ services:
   #     - postgres_data:/var/lib/postgresql/data
 
   http:
-    build:
-      context: ./community
-      dockerfile: ./apps/http/Dockerfile
+    image: akshitjain16/metaverse-community-http:latest
+    # build:
+    #   context: ./community
+    #   dockerfile: ./apps/http/Dockerfile
     container_name: metasketch_http
     env_file:
       - .env 
@@ -22,9 +23,10 @@ services:
       - "3000:3000"
 
   ws:
-    build:
-      context: ./community
-      dockerfile: ./apps/ws/Dockerfile
+    image: akshitjain16/metaverse-community-ws:latest
+    # build:
+    #   context: ./community
+    #   dockerfile: ./apps/ws/Dockerfile
     container_name: metasketch_ws
     env_file:
       - .env
@@ -32,9 +34,10 @@ services:
       - "3001:3001"
 
   tests:
-    build:
-      context: .
-      dockerfile: ./tests/Dockerfile
+    image: akshitjain16/metaverse-community-tests:latest
+    # build:
+    #   context: .
+    #   dockerfile: ./tests/Dockerfile
     container_name: metasketch_tests
     env_file:
       - .env           
