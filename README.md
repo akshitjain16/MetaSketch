@@ -1,41 +1,49 @@
 <p align="center">
   <a href="" rel="noopener">
-    <img width=960px height=645px src="https://media.licdn.com/dms/image/v2/C4D12AQEAHwh_pta8DQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1645616741443?e=2147483647&v=beta&t=6dz5JYIxacszKLO0fYEZovKXedeTBk7EgLXG7a4RGHI" alt="Metaverse Community Logo">
+    <img width=960px height=645px src="https://media.licdn.com/dms/image/v2/C4D12AQEAHwh_pta8DQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1645616741443?e=2147483647&v=beta&t=6dz5JYIxacszKLO0fYEZovKXedeTBk7EgLXG7a4RGHI" alt="Metaverse Logo">
   </a>
 </p>
 
-<h3 align="center">Metaverse Workspace</h3>
+<h3 align="center">MetaSketch</h3>
 
 <div align="center">
 
 [![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/akshitjain16/Metaverse-Community.svg)](https://github.com/akshitjain16/Metaverse-Community/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/akshitjain16/Metaverse-Community.svg)](https://github.com/akshitjain16/Metaverse-Community/pulls)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 </div>
 
 ---
 
-<p align="center">The Metaverse Workspace is a platform designed to bring people together in virtual, immersive environments. This project enables users to connect, interact, and explore various experiences in the metaverse through a seamless and dynamic interface.
+<p align="center">The MetaSketch is a platform designed to bring people together in virtual, immersive environments. This project enables users to connect, interact, and explore various experiences in the metaverse through a seamless and dynamic interface.
     <br> 
 </p>
 
 ## 📝 Table of Contents
 
 - [About](#about)
+- [Project Structure](#project_structure)
 - [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
 - [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 
 The Workspace aims to create a seamless digital environment where users can socialize, collaborate, and experience virtual worlds. Built with a robust backend and intuitive frontend, this project is designed to support dynamic interactions, real-time communications, and multimedia sharing within the metaverse.
+
+## 🏗 Project Structure <a name = "project_structure"></a>
+
+This Turborepo includes the following packages/apps:
+
+### Apps
+- `http`: REST API server
+- `web`: Next.js frontend application
+
+### Packages
+- `db`: Database schema and migrations using Prisma
+- `eslint-config`: Shared ESLint configurations
+- `typescript-config`: Shared TypeScript configurations
+- `ui`: Shared React component library
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
@@ -45,7 +53,7 @@ Follow these instructions to get the project up and running on your local machin
 
 To run the project locally, make sure you have these installed:
 
-- [Node.js](https://nodejs.org/) - v14 or higher
+- [Node.js](https://nodejs.org/) - v18 or higher
 - [Docker](https://www.docker.com/) - For containerized environments
 - [Kubernetes](https://kubernetes.io/) - For managing deployments
 - [Cert-Manager](https://cert-manager.io/docs/) - For SSL certificates
@@ -56,14 +64,14 @@ To run the project locally, make sure you have these installed:
 Clone the repository:
 
 ```bash
-git clone https://github.com/akshitjain16/Metaverse-Community.git
+git clone https://github.com/akshitjain16/MetaSketch.git
 cd community
 ```
 
 Install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 Set up environment variables:
@@ -77,7 +85,7 @@ cp .env.example .env
 To run the application locally:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 To start with Docker:
@@ -116,12 +124,12 @@ Once deployed, users can sign up, sign in, and explore the metaverse through the
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-To deploy the Metaverse Community project to a live environment, follow these steps:
+To deploy the MetaSketch to a live environment, follow these steps:
 
 1. **Dockerize the Application**:
     ```bash
-    docker build -t akshitjain16/metaverse-community .
-    docker push akshitjain16/metaverse-community
+    docker build -t akshitjain16/metaSketch .
+    docker push akshitjain16/metaSketch
     ```
 
 2. **Deploy to Kubernetes**:
@@ -137,7 +145,6 @@ To deploy the Metaverse Community project to a live environment, follow these st
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
 - [Express](https://expressjs.com/) - Server Framework
 - [React](https://reactjs.org/) - Web Framework
 - [Node.js](https://nodejs.org/) - Server Environment
@@ -149,10 +156,9 @@ To deploy the Metaverse Community project to a live environment, follow these st
 
 - [@akshitjain16](https://github.com/akshitjain16) - Project Owner & Lead Developer
 
-See also the list of [contributors](https://github.com/yourusername/Metaverse-Community/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/akshutjain16/MetaSketch/contributors) who participated in this project.
 
 ## 🎉 Acknowledgments <a name = "acknowledgement"></a>
 
 - Thanks to the open-source community
 - Inspired by advancements in virtual technology and online communities
-- References to helpful libraries and resources
