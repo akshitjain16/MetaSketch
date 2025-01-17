@@ -1,6 +1,7 @@
 const axios2 = require("axios");
-const BACKEND_URL = "http://localhost:3000"
-const WS_URL = "ws://localhost:3001"
+const WebSocket = typeof window !== "undefined" ? window.WebSocket : require("ws").WebSocket;
+const BACKEND_URL = process.env.BACKEND_URL || "http://localhost:3000";
+const WS_URL = process.env.WS_URL || "ws://localhost:3001";
 
 const axios = {
     post: async (...args) => {
@@ -999,7 +1000,25 @@ describe("Websocket tests", () => {
       await setupWs()
   })
 
-  test("Get back ack for joining the space", async () => {
+  afterAll(async () => {
+    // Close WebSocket connections
+    if (ws1) ws1.close();
+    if (ws2) ws2.close();
+  
+    // Wait for WebSocket connections to close
+    await new Promise((resolve) => {
+      const checkConnections = () => {
+        if (ws1.readyState === WebSocket.CLOSED && ws2.readyState === WebSocket.CLOSED) {
+          resolve();
+        } else {
+          setTimeout(checkConnections, 100);
+        }
+      };
+      checkConnections();
+    });
+  });
+
+  test("Get back acknowledgement for joining the space", async () => {
       //console.log("inside first test")
       ws1.send(JSON.stringify({
           "type": "join",

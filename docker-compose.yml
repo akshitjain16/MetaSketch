@@ -1,31 +1,46 @@
 services:
-  postgres:
-    image: postgres:13
-    container_name: metasketch_postgres
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 000000
-      POSTGRES_DB: metasketch
-    ports:
-      - "5432:5432"
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+  # postgres:
+  #   image: postgres:13
+  #   container_name: metasketch_postgres
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: 000000
+  #     POSTGRES_DB: metasketch
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
 
   http:
     build:
       context: ./community
       dockerfile: ./apps/http/Dockerfile
     container_name: metasketch_http
-    environment:
-      DB_HOST: postgres
-      DB_PORT: 5432
-      DB_USER: postgres
-      DB_PASSWORD: 000000
-      DB_NAME: metasketch
+    env_file:
+      - .env 
     ports:
       - "3000:3000"
+
+  ws:
+    build:
+      context: ./community
+      dockerfile: ./apps/ws/Dockerfile
+    container_name: metasketch_ws
+    env_file:
+      - .env
+    ports:
+      - "3001:3001"
+
+  tests:
+    build:
+      context: .
+      dockerfile: ./tests/Dockerfile
+    container_name: metasketch_tests
+    env_file:
+      - .env           
     depends_on:
-      - postgres
+      - http
+      - ws
 
 volumes:
   postgres_data:
